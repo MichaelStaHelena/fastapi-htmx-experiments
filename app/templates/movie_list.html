@@ -1,0 +1,9 @@
+<ul id="movie-list" class="list-group mt-4">
+    {% for movie in movies %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a hx-get="/movies/{{ movie.title }}" hx-target="#movie-detail" hx-swap="innerHTML">{{ movie.title }}</a>
+        <button class="btn btn-danger btn-sm" hx-delete="/movies/{{ movie.title }}" hx-target="#movie-list" hx-swap="innerHTML">Delete</button>
+    </li>
+    {% endfor %}
+</ul>
+<div id="movie-detail" class="mt-4"></div>

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Movie List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mt-4">Movie List</h2>
+    <div hx-get="/movies" hx-trigger="load" hx-target="#movie-list" hx-swap="innerHTML"></div>
+    <div id="movie-list" class="mt-4"></div>
+
+    <h2 class="mt-4">Add Movie</h2>
+    <button class="btn btn-primary" hx-get="/movies/form" hx-target="#movie-form" hx-swap="innerHTML" data-toggle="modal" data-target="#movieModal">Add Movie</button>
+</div>
+{% endblock %}
